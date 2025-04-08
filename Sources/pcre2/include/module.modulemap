@@ -1,9 +1,6 @@
 module pcre2 {
+    header "config.h"
     header "pcre2.h"
-    module config {
-        header "config.h"
-        export *
-    }
     module types {
         header "types.h"
         export *

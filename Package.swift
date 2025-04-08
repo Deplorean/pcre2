@@ -28,7 +28,6 @@ let package = Package(
             name: "pcre2_tests",
             dependencies: ["pcre2"],
             cSettings: [
-                .define("PCRE2_CODE_UNIT_WIDTH", to: "32")
             ]
         ),
         .target(
@@ -70,7 +69,10 @@ let package = Package(
                 "include/generated/pcre2_chartables.c"
             ],
             cSettings: [
-                .headerSearchPath("src"),
+                //.define("PCRE2_CODE_UNIT_WIDTH", to: "32"),
+                .define("SLJIT_DEBUG", to: "0", .when(platforms: [.iOS, .macOS, .visionOS], configuration: .release)),
+                .define("SLJIT_DEBUG", to: "1", .when(platforms: [.macOS], configuration: .debug)),
+                .define("HAVE_CONFIG_H"),
                 .define("HAVE_ASSERT_H", to: "1"),
                 /* Define this if your compiler supports __attribute__((uninitialized)) */
                 .define("HAVE_ATTRIBUTE_UNINITIALIZED", to: "1"),

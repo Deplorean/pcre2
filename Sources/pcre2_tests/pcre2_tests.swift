@@ -6,7 +6,7 @@
 //
 
 import Testing
-import pcre2.config
+import pcre2
 
 struct pcre2_tests {
     @Test("Assert version matches 10.45")
