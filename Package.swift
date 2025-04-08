@@ -8,7 +8,7 @@ let package = Package(
     platforms: [
         .macOS(.v15),
         .visionOS(.v2),
-        .iOS(.v15),
+        .iOS(.v15)
     ],
     products: [
         .library(
@@ -16,7 +16,7 @@ let package = Package(
             targets: [
                 "pcre2"
             ]
-        ),
+        )
     ],
     dependencies: [
         .package(url: "https://github.com/Deplorean/bzip2.git", branch: "main"),
@@ -27,12 +27,6 @@ let package = Package(
         .testTarget(
             name: "pcre2_tests",
             dependencies: ["pcre2"]
-//            cSettings: [
-//                .define("HAVE_CONFIG_H"),
-//                .define("HAVE_MEMMOVE"),
-//                .define("PCRE2_STATIC"),
-//                .define("PCRE2_CODE_UNIT_WIDTH", to: "8")
-//            ]),
         ),
         .target(
             name: "pcre2",
@@ -75,25 +69,8 @@ let package = Package(
             ],
             cSettings: [
                 .define("HAVE_CONFIG_H"),
-                // .define("HAVE_MEMMOVE"),
-                // .define("PCRE2_STATIC"),
-                .define("PCRE2_CODE_UNIT_WIDTH", to: "32"),
-                //.define("STDC_HEADERS", to: "0"),
-                .unsafeFlags([
-                    //"-Wimplicit-function-declaration",
-                    //"-Wno-error=declaration-after-statement",
-                    //"-Wno-error=implicit-function-declaration",
-//                    "-Wimplicit-function-declaration",
-//                    "-Wdeclaration-after-statement",
-//                    "-Wextra",
-//                    //"-Wconversion",
-//                    "-Wsign-compare",
-//                    "-Wunused-function",
-//                    "-Wshadow",
-//                    "-Wimplicit-int-conversion",
-//                    "-Werror"
-                ])
+                .define("PCRE2_CODE_UNIT_WIDTH", to: "32")
             ]
         )
-    ],
+    ]
 )
