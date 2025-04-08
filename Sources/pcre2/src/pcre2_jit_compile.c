@@ -39,8 +39,6 @@ POSSIBILITY OF SUCH DAMAGE.
 -----------------------------------------------------------------------------
 */
 
-#import <sljit-Bridging-Header.h>
-
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
@@ -54,6 +52,7 @@ POSSIBILITY OF SUCH DAMAGE.
 #include "pcre2_internal.h"
 
 #ifdef SUPPORT_JIT
+#import <sljit-Bridging-Header.h>
 /* All-in-one: Since we use the JIT compiler only from here,
 we just include it. This way we don't need to touch the build
 system files. */
