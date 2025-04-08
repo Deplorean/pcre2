@@ -39,6 +39,8 @@ POSSIBILITY OF SUCH DAMAGE.
 -----------------------------------------------------------------------------
 */
 
+#import <sljit-Bridging-Header.h>
+
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
@@ -52,23 +54,26 @@ POSSIBILITY OF SUCH DAMAGE.
 #include "pcre2_internal.h"
 
 #ifdef SUPPORT_JIT
-
 /* All-in-one: Since we use the JIT compiler only from here,
 we just include it. This way we don't need to touch the build
 system files. */
 
-#define SLJIT_CONFIG_AUTO 1
-#define SLJIT_CONFIG_STATIC 1
-#define SLJIT_VERBOSE 0
+//#define SLJIT_CONFIG_AUTO 1
+//#define SLJIT_CONFIG_STATIC 1
+//#define SLJIT_VERBOSE 0
 
-#ifdef PCRE2_DEBUG
-#define SLJIT_DEBUG 1
-#else
-#define SLJIT_DEBUG 0
-#endif
+//#ifdef PCRE2_DEBUG
+//#ifndef SLJIT_DEBUG
+//#define SLJIT_DEBUG 1
+//#endif
+//#else
+//#ifndef SLJIT_DEBUG
+//#define SLJIT_DEBUG 0
+//#endif
+//#endif
 
-#define SLJIT_MALLOC(size, allocator_data) pcre2_jit_malloc(size, allocator_data)
-#define SLJIT_FREE(ptr, allocator_data) pcre2_jit_free(ptr, allocator_data)
+//#define SLJIT_MALLOC(size, allocator_data) pcre2_jit_malloc(size, allocator_data)
+//#define SLJIT_FREE(ptr, allocator_data) pcre2_jit_free(ptr, allocator_data)
 
 static void * pcre2_jit_malloc(size_t size, void *allocator_data)
 {
@@ -82,7 +87,7 @@ pcre2_memctl *allocator = ((pcre2_memctl*)allocator_data);
 allocator->free(ptr, allocator->memory_data);
 }
 
-#include "../deps/sljit/sljit_src/sljitLir.c"
+//#include "../deps/sljit/sljit_src/sljitLir.c"
 
 #if defined SLJIT_CONFIG_UNSUPPORTED && SLJIT_CONFIG_UNSUPPORTED
 #error Unsupported architecture

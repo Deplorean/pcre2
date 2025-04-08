@@ -1,23 +1,12 @@
 module pcre2 {
-    header "../src/pcre2.h"
-    
+    header "pcre2.h"
     module config {
-        header "../src/config.h"
-
+        header "config.h"
         export *
     }
-    
-    module ucp {
-        header "../src/pcre2_ucp.h"
-        
-        export *
-    }
-    
     module types {
         header "types.h"
-        
         export *
     }
-    
     export *
 }

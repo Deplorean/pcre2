@@ -6,10 +6,13 @@
 //
 
 import Testing
+import pcre2.config
 
 struct pcre2_tests {
-    
-    static func main() {
+    @Test("Assert version matches 10.45")
+    func testLoadingOfPcre2Library() async throws {
+        let version = String(PACKAGE_VERSION)
         
+        assert(version == "10.45")
     }
 }
