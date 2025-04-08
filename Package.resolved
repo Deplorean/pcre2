@@ -1,5 +1,5 @@
 {
-  "originHash" : "7e126f4c4a05c557f14e168a7d0295336190bbabf10b46563ed5ab5bbbf7a0b5",
+  "originHash" : "f449edf9e9fa1a4abf35b366e99d514f0558b1402733e9a84db30735b5005137",
   "pins" : [
     {
       "identity" : "bzip2",
@@ -16,7 +16,7 @@
       "location" : "https://github.com/Deplorean/sljit.git",
       "state" : {
         "branch" : "main",
-        "revision" : "19e8bc254020897f316ed171d0bd886bc9ab85b1"
+        "revision" : "b61c4da777f73b3540282ae1ef136a2b2ba88bcc"
       }
     },
     {
