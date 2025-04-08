@@ -1,13 +1,22 @@
 {
-  "originHash" : "5657207f312856e6ec47ddc80021827447422fe6bd306673009034f6092d080b",
+  "originHash" : "7e126f4c4a05c557f14e168a7d0295336190bbabf10b46563ed5ab5bbbf7a0b5",
   "pins" : [
     {
       "identity" : "bzip2",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Deplorean/bzip2.git",
       "state" : {
-        "revision" : "9101b8c4429320e79efe5da9d7081df567e0634f",
-        "version" : "1.0.8"
+        "branch" : "main",
+        "revision" : "5af952948475d1a4c69af94ac6467d72c7830699"
+      }
+    },
+    {
+      "identity" : "sljit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Deplorean/sljit.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "19e8bc254020897f316ed171d0bd886bc9ab85b1"
       }
     },
     {
@@ -15,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Deplorean/z.git",
       "state" : {
-        "revision" : "2504cd7ac5249277445f12af1492e9cbdc3da1f0",
-        "version" : "1.3.1"
+        "branch" : "main",
+        "revision" : "e79fd1154a97533bd77f5968758b13c94fd89a31"
       }
     }
   ],
