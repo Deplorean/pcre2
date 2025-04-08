@@ -35,7 +35,7 @@ let package = Package(
             name: "pcre2",
             dependencies: [
                 .product(name: "bz2", package: "bzip2"),
-                .product(name: "sljit", package: "sljit"),
+                .product(name: "sljit", package: "sljit", condition: .when(platforms: [.macOS])),
                 .product(name: "z", package: "z")
             ],
             sources: [
