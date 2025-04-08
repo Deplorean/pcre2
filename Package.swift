@@ -69,6 +69,8 @@ let package = Package(
                 "include/generated/pcre2_chartables.c"
             ],
             cSettings: [
+                .headerSearchPath("src"),
+                .headerSearchPath("include"),
                 //.define("PCRE2_CODE_UNIT_WIDTH", to: "32"),
                 .define("SLJIT_DEBUG", to: "0", .when(platforms: [.iOS, .macOS, .visionOS], configuration: .release)),
                 .define("SLJIT_DEBUG", to: "1", .when(platforms: [.macOS], configuration: .debug)),
